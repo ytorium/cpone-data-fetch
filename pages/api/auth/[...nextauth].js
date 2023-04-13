@@ -1,11 +1,17 @@
 import NextAuth from 'next-auth';
 import Providers from 'next-auth/providers';
+import TwitterProvider from "next-auth/providers/twitter";
+import GithubProvider from "next-auth/providers/github";
 
 export default NextAuth({
   providers: [
-    Providers.Twitter({
+    TwitterProvider({
       clientId: process.env.TWITTER_CONSUMER_KEY,
       clientSecret: process.env.TWITTER_CONSUMER_SECRET
+    }),
+    GithubProvider({
+      clientId: process.env.GITHUB_ID,
+      clientSecret: process.env.GITHUB_SECRET,
     })
   ],
   callbacks: {
