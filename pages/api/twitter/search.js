@@ -12,6 +12,9 @@ export default async (req, res) => {
     secret: process.env.NEXTAUTH_SECRET
   });
 
+  console.log(process.env.NEXTAUTH_SECRET);
+  console.log(token);
+
   const client = new Twitter({
     subdomain: 'api',
     consumer_key: process.env.TWITTER_CONSUMER_KEY,
