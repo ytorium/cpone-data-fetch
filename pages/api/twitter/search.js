@@ -19,8 +19,9 @@ export default async (req, res) => {
     subdomain: 'api',
     consumer_key: process.env.TWITTER_CONSUMER_KEY,
     consumer_secret: process.env.TWITTER_CONSUMER_SECRET,
-    access_token_key: token.twitter.accessToken,
-    access_token_secret: token.twitter.refreshToken
+    access_token_key: process.env.TWITTER_ACCESS_TOKEN,
+    access_token_secret: process.env.TWITTER_ACCESS_SECRET,
+    bearer_token: process.env.TWITTER_BEARER_TOKEN
   });
 
   try {
